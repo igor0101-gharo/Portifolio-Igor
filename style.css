@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA (LETRAS GRANDES)
+   1. CONFIGURAÇÕES GERAIS E IDENTIDADE DIGITAL (LETRAS GRANDES)
    ========================================================================== */
    * {
     margin: 0;
@@ -7,71 +7,90 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-global: #0b0f19;       /* Azul escuro profundo (fundo do sistema) */
+    --bg-section: #121824;      /* Fundo dos blocos (estilo terminal/dashboard) */
+    --text-primary: #f8fafc;    /* Branco brilhante para leitura em telas escuras */
+    --text-secondary: #94a3b8;  /* Cinza azulado para textos secundários */
+    --accent-color: #38bdf8;    /* Azul digital/Ciano (cor de destaque do código) */
+    --border-color: #1e293b;    /* Linhas digitais sutis */
+    --glow-effect: 0 0 15px rgba(56, 189, 248, 0.15); /* Brilho cibernético sutil */
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa; /* Fundo levemente acinzentado para destacar os blocos brancos */
-    color: #212529;            /* Cinza escuro profissional para leitura confortável */
+    background-color: var(--bg-global);
+    color: var(--text-primary);
     line-height: 1.7;
     padding: 60px 20px;
-    max-width: 900px;          /* Largura ideal para telas grandes e boa leitura */
+    max-width: 900px;
     margin: 0 auto;
 }
 
 /* ==========================================================================
-   2. CABEÇALHO (FOTO E NOME)
+   2. CABEÇALHO TECH (FOTO E NOME)
    ========================================================================== */
 img {
     display: block;
-    width: 180px;               /* Tamanho profissional para foto de perfil */
+    width: 180px;
     height: 180px;
     object-fit: cover;
-    border-radius: 50%;         /* Foto arredondada moderna */
+    border-radius: 50%;
     margin: 0 auto 25px auto;
-    border: 5px solid #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 4px solid var(--accent-color); /* Borda azul destacada */
+    box-shadow: var(--glow-effect);
 }
 
 h1 {
     text-align: center;
-    font-size: 3rem;            /* Letra bem grande e imponente para o nome */
-    color: #1a202c;
+    font-size: 3rem;            /* Letra grande e imponente */
+    color: var(--text-primary);
     margin-bottom: 60px;
     font-weight: 800;
     letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ==========================================================================
-   3. SEÇÕES INDEPENDENTES (ORGANIZAÇÃO EM BLOCOS)
+   3. SEÇÕES DIRECIONADAS (ESTILO MÓDULOS DE COMPUTADOR)
    ========================================================================== */
-/* Seleciona todas as suas divs estruturais usando os nomes exatos do seu HTML */
+/* Seleciona todas as suas divs organizando em seções separadas */
 .introdução, .habilidades, .Projetos, .Contato {
-    background-color: #ffffff;  /* Tema Branco Puro para as seções */
-    border: 1px solid #e2e8f0;  /* Borda sutil de isolamento */
-    border-radius: 12px;        /* Cantos suavemente arredondados */
-    padding: 45px;              /* Amplo espaço interno (respiro visual) */
-    margin-bottom: 40px;        /* Separação física nítida entre cada seção */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra leve e elegante */
+    background-color: var(--bg-section);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 45px;
+    margin-bottom: 40px;        /* Espaço que separa fisicamente cada seção */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Títulos de cada seção */
+/* Efeito ao passar o mouse: simula o acionamento de um hardware/computador */
+.introdução:hover, .habilidades:hover, .Projetos:hover, .Contato:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), var(--glow-effect);
+}
+
+/* Títulos das seções estilo "Tech" */
 h2 {
-    font-size: 2rem;            /* Subtítulos grandes e destacados */
-    color: #1a202c;
+    font-size: 2rem;            /* Subtítulos bem visíveis */
+    color: var(--accent-color); /* Títulos em azul digital */
     margin-bottom: 25px;
     font-weight: 700;
-    border-bottom: 2px solid #edf2f7; /* Linha divisória interna */
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 12px;
 }
 
-/* Ajuste específico para o segundo "Sobre Mim" dentro da div introdução */
+/* Ajuste para o segundo "Sobre Mim" na div introdução */
 .introdução h2:not(:first-child) {
     margin-top: 40px;
 }
 
-/* Textos e Parágrafos */
+/* Parágrafos de texto */
 p {
-    font-size: 1.25rem;         /* Letras grandes para os textos */
-    color: #4a5568;
+    font-size: 1.25rem;         /* Letras grandes pedidas */
+    color: var(--text-secondary);
     margin-bottom: 20px;
 }
 
@@ -79,39 +98,74 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* Itens de Lista (Organização dos tópicos de habilidades e informações) */
+/* Itens de Lista (Habilidades e Tópicos) */
 li {
-    list-style: none;           /* Remove a bolinha padrão para um visual mais limpo */
-    font-size: 1.25rem;         /* Alinhado ao tamanho dos parágrafos */
-    color: #4a5568;
+    list-style: none;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
     margin-bottom: 12px;
-    padding-left: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo código para as listas */
+}
+
+/* Destaque para o hífen na lista para parecer comando de terminal */
+li::before {
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 /* ==========================================================================
-   4. BOTÕES E LINKS DE CONTATO / PROJETOS
+   4. BOTÕES E LINKS (INTERFACES E CLIQUES)
    ========================================================================== */
-/* Estilização dos botões estruturados no HTML */
+/* Botões principais com contorno digital */
 button {
-    background-color: #1a202c;  /* Cor escura elegante para botões comerciais */
-    border: none;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
     border-radius: 6px;
-    padding: 14px 28px;
+    padding: 12px 26px;
     margin-right: 12px;
     margin-bottom: 15px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background-color: #2d3748;  /* Feedback visual ao passar o mouse */
+    background-color: rgba(56, 189, 248, 0.1); /* Efeito de preenchimento sutil */
+    box-shadow: var(--glow-effect);
 }
 
 button a {
-    color: #ffffff !important;  /* Texto do link dentro do botão sempre branco */
+    color: var(--accent-color) !important; /* Texto do link na cor azul */
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-/* Ajuste para o link avulso "HTML e CSS" na seção Projetos que está fora de
+/* Link avulso "HTML e CSS" na seção de Projetos */
+.Projetos > a {
+    display: inline-block;
+    background-color: var(--border-color);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.Projetos > a:hover {
+    background-color: #243249;
+    border-color: var(--accent-color);
+}
+
+/* Seção de Email no Contato */
+.Contato p {
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-top: 1px dashed var(--border-color);
+    padding-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
