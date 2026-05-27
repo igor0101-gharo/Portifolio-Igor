@@ -1,0 +1,117 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E TIPOGRAFIA (LETRAS GRANDES)
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa; /* Fundo levemente acinzentado para destacar os blocos brancos */
+    color: #212529;            /* Cinza escuro profissional para leitura confortável */
+    line-height: 1.7;
+    padding: 60px 20px;
+    max-width: 900px;          /* Largura ideal para telas grandes e boa leitura */
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (FOTO E NOME)
+   ========================================================================== */
+img {
+    display: block;
+    width: 180px;               /* Tamanho profissional para foto de perfil */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;         /* Foto arredondada moderna */
+    margin: 0 auto 25px auto;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;            /* Letra bem grande e imponente para o nome */
+    color: #1a202c;
+    margin-bottom: 60px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+/* ==========================================================================
+   3. SEÇÕES INDEPENDENTES (ORGANIZAÇÃO EM BLOCOS)
+   ========================================================================== */
+/* Seleciona todas as suas divs estruturais usando os nomes exatos do seu HTML */
+.introdução, .habilidades, .Projetos, .Contato {
+    background-color: #ffffff;  /* Tema Branco Puro para as seções */
+    border: 1px solid #e2e8f0;  /* Borda sutil de isolamento */
+    border-radius: 12px;        /* Cantos suavemente arredondados */
+    padding: 45px;              /* Amplo espaço interno (respiro visual) */
+    margin-bottom: 40px;        /* Separação física nítida entre cada seção */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra leve e elegante */
+}
+
+/* Títulos de cada seção */
+h2 {
+    font-size: 2rem;            /* Subtítulos grandes e destacados */
+    color: #1a202c;
+    margin-bottom: 25px;
+    font-weight: 700;
+    border-bottom: 2px solid #edf2f7; /* Linha divisória interna */
+    padding-bottom: 12px;
+}
+
+/* Ajuste específico para o segundo "Sobre Mim" dentro da div introdução */
+.introdução h2:not(:first-child) {
+    margin-top: 40px;
+}
+
+/* Textos e Parágrafos */
+p {
+    font-size: 1.25rem;         /* Letras grandes para os textos */
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Itens de Lista (Organização dos tópicos de habilidades e informações) */
+li {
+    list-style: none;           /* Remove a bolinha padrão para um visual mais limpo */
+    font-size: 1.25rem;         /* Alinhado ao tamanho dos parágrafos */
+    color: #4a5568;
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+/* ==========================================================================
+   4. BOTÕES E LINKS DE CONTATO / PROJETOS
+   ========================================================================== */
+/* Estilização dos botões estruturados no HTML */
+button {
+    background-color: #1a202c;  /* Cor escura elegante para botões comerciais */
+    border: none;
+    border-radius: 6px;
+    padding: 14px 28px;
+    margin-right: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #2d3748;  /* Feedback visual ao passar o mouse */
+}
+
+button a {
+    color: #ffffff !important;  /* Texto do link dentro do botão sempre branco */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Ajuste para o link avulso "HTML e CSS" na seção Projetos que está fora de
